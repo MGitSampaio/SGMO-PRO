@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
         //chama o método contarEscalas em EscalaDao se não houver escalas chama o método inserir
 
+        datasDao.contarDatas();
         escalaDao.contarEscalas();
         statusDao.contarStatus();
         cargoDao.contarCargos();
@@ -158,12 +159,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         etDtSo.setText(dataHelper.convertLongEmStringData(hoje.getTime()));
+        etDtApp.setText(dataHelper.convertLongEmStringData(datasDao.dataApp()));
 
-        if (etDtApp.getText().toString().equals("xxx")) {
 
-            etDtApp.setText(dataHelper.convertLongEmStringData(datasDao.dataApp()));
-
-        }
 
         imgClienteHome.setOnClickListener(new View.OnClickListener() {
             @Override

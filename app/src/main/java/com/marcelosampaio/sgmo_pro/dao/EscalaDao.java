@@ -18,7 +18,6 @@ import java.util.List;
 
 public class EscalaDao {
     private final Calendar calendar = Calendar.getInstance();
-    private final DataHelper dataHelper = new DataHelper();
     private final SQLiteDatabase banco;
 
     public EscalaDao(Context context) {
