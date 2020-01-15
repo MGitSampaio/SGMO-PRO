@@ -154,14 +154,10 @@ public class MainActivity extends AppCompatActivity {
         qtdeUniV = findViewById(R.id.tvQtdeUniV);
         etDtSo = findViewById(R.id.etDtSo);
         etDtApp = findViewById(R.id.etDtApp);
-
         setaContadores();
-
 
         etDtSo.setText(dataHelper.convertLongEmStringData(hoje.getTime()));
         etDtApp.setText(dataHelper.convertLongEmStringData(datasDao.dataApp()));
-
-
 
         imgClienteHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -263,8 +259,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (!permissoesRequeridas.isEmpty()) {
-            ActivityCompat.requestPermissions(MainActivity.this, permissoesRequeridas.toArray(new String[
-                    permissoesRequeridas.size()]), 1);
+            ActivityCompat.requestPermissions(MainActivity.this,
+                    permissoesRequeridas.toArray(new String[permissoesRequeridas.size()]), 1);
         }
 
     }
