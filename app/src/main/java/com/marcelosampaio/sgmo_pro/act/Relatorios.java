@@ -22,8 +22,12 @@ import com.marcelosampaio.sgmo_pro.dao.RondaDao;
 import com.marcelosampaio.sgmo_pro.dao.UniformeDao;
 import com.marcelosampaio.sgmo_pro.dao.VencimentoDao;
 import com.marcelosampaio.sgmo_pro.dataHelper.DataHelper;
+import com.marcelosampaio.sgmo_pro.model.Cliente;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Relatorios extends AppCompatActivity {
     //==============================================================================================
@@ -31,6 +35,7 @@ public class Relatorios extends AppCompatActivity {
     private TextInputEditText inicio;
     private Spinner spiRelatorios;
     private Button btnRelatorios;
+    private Button btnImportar;
     private PostoDao postoDao;
     private ClienteDao clienteDao;
     private FuncionarioDao funcionarioDao;
