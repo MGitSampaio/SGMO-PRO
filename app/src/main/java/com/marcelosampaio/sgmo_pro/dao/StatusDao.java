@@ -52,6 +52,9 @@ public class StatusDao {
         if(count == 0){
            inserirStatus();
         }
+        if (count == 4){
+            excluirStatus();
+        }
 
         return count;
     }
@@ -69,7 +72,19 @@ public class StatusDao {
             banco.insert("status",null,values);
             System.out.println(status[i]);
         }
+
         banco.close();
     }
+
+    public void excluirStatus(){
+        Cursor cursor = banco.rawQuery("Select * from status where status =?",new String[]
+                {"Vigilante"});
+
+        banco.delete("status", "idStatus = ?", new String[]
+                {String.valueOf(cursor.getInt(0))});
+
+    }
+
+
 
 }
