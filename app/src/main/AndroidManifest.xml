@@ -22,7 +22,17 @@
 
         </activity>
 
-        <activity android:name=".act.CadastroUsuario" />
+        <activity android:name=".act.CadastroUsuario"
+            android:label="Usuário">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.Cadastros" />
+
+        </activity>
+
+
+
+
         <activity
             android:name=".act.Relatorios"
             android:label="Relatórios">
