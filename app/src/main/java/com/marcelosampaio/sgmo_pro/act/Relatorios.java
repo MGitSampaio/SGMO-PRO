@@ -35,7 +35,6 @@ public class Relatorios extends AppCompatActivity {
     private TextInputEditText inicio;
     private Spinner spiRelatorios;
     private Button btnRelatorios;
-    private Button btnImportar;
     private PostoDao postoDao;
     private ClienteDao clienteDao;
     private FuncionarioDao funcionarioDao;
@@ -52,6 +51,7 @@ public class Relatorios extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.relatorios);
+
 
         //==========================================================================================
         //Mapeando os elementos do xml
@@ -143,8 +143,7 @@ public class Relatorios extends AppCompatActivity {
                         movimentacaoDao = new MovimentacaoDao(Relatorios.this);
 
                         try {
-                            movimentacaoDao.reportMovimentacao(dataHelper.
-                                    converteStringDataEmLong(inicio.toString()));
+                            movimentacaoDao.reportMovimentacao(inicio.getText().toString());
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -160,7 +159,7 @@ public class Relatorios extends AppCompatActivity {
                         ocorrenciaDao = new OcorrenciaDao(Relatorios.this);
 
                         try {
-                            ocorrenciaDao.reportOcorrencia(dataHelper.converteStringDataEmLong(inicio.getText().toString()));
+                            ocorrenciaDao.reportOcorrencia(inicio.getText().toString());
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -178,8 +177,7 @@ public class Relatorios extends AppCompatActivity {
                         rondaDao = new RondaDao(Relatorios.this);
 
                         try {
-                            rondaDao.reportRondas(dataHelper.converteStringDataEmLong
-                                    (inicio.toString()));
+                            rondaDao.reportRondas(inicio.getText().toString());
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
